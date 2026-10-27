@@ -1,0 +1,11 @@
+services:
+  dimas-profile-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dimas-profile-web
+    restart: unless-stopped
+    ports:
+      - "3100:80"
+    environment:
+      - NODE_ENV=production

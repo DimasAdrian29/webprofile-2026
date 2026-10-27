@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  :root.dark {
+    color-scheme: dark;
+  }
+  :root.light {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300;
+  }
+
+  /* Responsive typography scaling */
+  h1 {
+    font-size: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Glass panel styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+/* Glass card styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -5px rgba(2, 132, 199, 0.12);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: none;
+}
+
+.dark .glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.15);
+}
+
+/* Background network grid pattern */
+.network-grid-bg {
+  background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .network-grid-bg {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
